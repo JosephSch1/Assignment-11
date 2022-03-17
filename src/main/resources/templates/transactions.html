@@ -1,17 +1,18 @@
 <html xmlns:th="http://thymeleaf.org">
 	<head>
 		<title>Online Bank</title>
+		<link rel="stylesheet" href="transactions.css"/>
 	</head>
 	<body>
 		<h2>Transaction History</h2>
 		
 		<table>
 			<tr>
-				<th>ID</th>>
-				<th>Date</th>
-				<th>Retailer</th>
-				<th>Funds In</th>
-				<th>Funds Out</th>
+				<th style="color:white; background-color: black">ID</th>>
+				<th style="color:white; background-color: black">Date</th>
+				<th style="color:white; background-color: black">Retailer</th>
+				<th style="color:white; background-color: black">Funds In</th>
+				<th style="color:white; background-color: black">Funds Out</th>
 			</tr>>
 			<tr th:each="txn : ${transactions}">
 				<td style="padding: 5px"><a th:href="@{/transactions/{txnId}(txnId=${txn.id})}" th:text="${txn.id}"></a></td>
